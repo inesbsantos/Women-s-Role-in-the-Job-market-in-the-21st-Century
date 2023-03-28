@@ -1,4 +1,4 @@
-Economy;Region;Does the law mandate equal remuneration for work of equal value?;Can a woman work at night in the same way as a man?;Can a woman work in a job deemed dangerous in the same way as a man?;Jobs deemed hazardous;Jobs deemed arduous;Jobs deemed morally inappropriate;Can a woman work in an industrial job in the same way as a man?;Mining;Construction;Factories;Agriculture;Energy;Water;Transportation;Other
+Economy,Region;Does the law mandate equal remuneration for work of equal value?,Can a woman work at night in the same way as a man?,Can a woman work in a job deemed dangerous in the same way as a man?,Jobs deemed hazardous;Jobs deemed arduous;Jobs deemed morally inappropriate,Can a woman work in an industrial job in the same way as a man?,Mining,Construction,Factories,Agriculture,Energy,Water,Transportation,Other
 Afghanistan;SA;No;No;No;No;No;Yes;No;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Albania;ECA;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Algeria;MENA;Yes;No;No;Yes;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
