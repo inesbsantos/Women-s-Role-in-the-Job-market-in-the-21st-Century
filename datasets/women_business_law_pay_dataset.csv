@@ -48,7 +48,7 @@ Djibouti;MENA;Yes;Yes;No;Yes;No;Yes;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;No
 Dominica;LAC;No;Yes;Yes;Yes;Yes;Yes;No;No;No;No;Yes;No;No;No;Yes
 Dominican Republic;LAC;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Ecuador;LAC;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
-Egypt, Arab Rep.;MENA;No;No;No;No;No;No;No;No;No;No;Yes;No;Yes;Yes;No
+Egypt;MENA;No;No;No;No;No;No;No;No;No;No;Yes;No;Yes;Yes;No
 El Salvador;LAC;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Equatorial Guinea;SSA;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Eritrea;SSA;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
@@ -59,7 +59,7 @@ Fiji;EAP;No;Yes;Yes;Yes;Yes;Yes;No;Yes;Yes;No;Yes;Yes;Yes;Yes;Yes
 Finland;OECD;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 France;OECD;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Gabon;SSA;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
-Gambia, The;SSA;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+Gambia;SSA;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Georgia;ECA;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Germany;OECD;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Ghana;SSA;No;Yes;Yes;Yes;Yes;Yes;No;Yes;Yes;No;Yes;Yes;Yes;Yes;Yes
@@ -76,7 +76,7 @@ Hungary;OECD;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Iceland;OECD;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 India;SA;No;No;Yes;Yes;Yes;Yes;No;No;Yes;No;Yes;Yes;Yes;Yes;Yes
 Indonesia;EAP;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
-Iran, Islamic Rep.;MENA;No;Yes;No;No;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+Iran Islamic Rep.;MENA;No;Yes;No;No;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Iraq;MENA;Yes;No;No;No;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Ireland;OECD;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Israel;OECD;Yes;Yes;No;No;Yes;Yes;No;Yes;Yes;No;Yes;Yes;Yes;Yes;Yes
@@ -109,7 +109,7 @@ Marshall Islands;EAP;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Mauritania;SSA;No;Yes;No;No;No;No;No;No;No;No;Yes;Yes;Yes;Yes;Yes
 Mauritius;SSA;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Mexico;LAC;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
-Micronesia, Fed. Sts.;EAP;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+Micronesi Fed. Sts.;EAP;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Moldova;ECA;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Mongolia;EAP;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Montenegro;ECA;No;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
@@ -165,7 +165,7 @@ Suriname;LAC;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Sweden;OECD;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Switzerland;OECD;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Syrian Arab Republic;MENA;No;No;No;No;No;No;No;No;No;No;No;No;Yes;Yes;Yes
-Taiwan, China;EAP;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+Taiwan;EAP;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Tajikistan;ECA;Yes;Yes;No;No;No;Yes;No;No;No;No;No;No;No;No;Yes
 Tanzania;SSA;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Thailand;EAP;Yes;Yes;Yes;Yes;Yes;Yes;No;No;No;Yes;Yes;Yes;No;Yes;No
@@ -186,6 +186,6 @@ Vanuatu;EAP;No;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Venezuela, RB;LAC;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Vietnam;EAP;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 West Bank and Gaza;MENA;No;No;No;No;No;Yes;No;No;Yes;No;No;Yes;Yes;Yes;Yes
-Yemen, Rep.;MENA;No;No;No;No;No;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+Yemen Rep.;MENA;No;No;No;No;No;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Zambia;SSA;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
 Zimbabwe;SSA;No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
