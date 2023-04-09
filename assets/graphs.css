@@ -1,0 +1,74 @@
+.country_drop .Select-value{
+    color: #84A59D;
+    background-color: #f2f6f5;
+    border-color: #90a5a0;
+}
+
+.country_drop .VirtualizedSelectFocusedOption {
+    background-color: #ecf4f2;
+}
+
+.dropdown-right{
+    margin-right:60px;
+}
+
+.country_drop {
+    width:30%;
+    margin-top:25px;
+    position:absolute;
+    right:60px;
+}
+
+#role_list{
+    margin-left:60px;
+}
+
+#role_scatter {
+    margin:auto;
+}
+
+#wage_line_chart, #year_slider{
+    width:80%;
+    margin:auto;
+    margin-top: 70px;
+}
+
+#wage_line_chart{
+    height: 600px;
+}
+
+#year_slider .rc-slider-handle{
+    border-color: #ACCEC6;
+}
+
+#year_slider .rc-slider-track{
+    background-color: #ACCEC6;
+}
+
+#year_slider .rc-slider-mark{
+    background-color: #ACCEC6;
+}
+
+#year_slider .rc-slider-dot-active {
+    border-color: #ACCEC6;
+  }
+
+#p1{
+    margin-left:60px;
+    margin-top:200px;
+}
+
+#p2{
+    margin-right:60px;
+    margin-top:70px;
+}
+
+#country_drop2{
+    width:170px;
+    margin:auto;
+}
+
+#year_drop{
+    width:100px;
+    margin:auto;
+}
