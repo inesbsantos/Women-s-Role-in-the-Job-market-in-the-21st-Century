@@ -145,8 +145,11 @@ layout_choropleth2 = dict(geo=dict(scope='world',  #default
 map2001 = go.Figure(data=data_choropleth2, layout=layout_choropleth2)
 
 #The app itself
+
+external_stylesheets = [dbc.themes.BOOTSTRAP, 'https://github.com/inesbsantos/Women-s-Role-in-the-Job-market-in-the-21st-Century/tree/main/assets']
+
 app = dash.Dash(
-    external_stylesheets=[dbc.themes.BOOTSTRAP]
+    external_stylesheets=external_stylesheets
 )
 server = app.server
 
