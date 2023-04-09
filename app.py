@@ -146,7 +146,7 @@ map2001 = go.Figure(data=data_choropleth2, layout=layout_choropleth2)
 
 #The app itself
 
-app = dash.Dash(
+app = dash.Dash(__name__,
     external_stylesheets=[dbc.themes.BOOTSTRAP]
 )
 
