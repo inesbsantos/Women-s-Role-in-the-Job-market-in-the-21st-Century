@@ -100,13 +100,32 @@ y = industrial_jobs_count.Yes[2023]
 df_women_business_and_law= df_women_business_and_law.replace('No',0)
 df_women_business_and_law = df_women_business_and_law.replace('Yes',1)
 
+# Function taken from -> https://towardsdatascience.com/discrete-colour-scale-in-plotly-python-26f2d6e21c77
+def generateDiscreteColourScale(colour_set):
+    #colour set is a list of lists
+    colour_output = []
+    num_colours = len(colour_set)
+    divisions = 1./num_colours
+    c_index = 0.
+    # Loop over the colour set
+    for cset in colour_set:
+        num_subs = len(cset)
+        sub_divisions = divisions/num_subs
+        # Loop over the sub colours in this set
+        for subcset in cset:
+            colour_output.append((c_index,subcset))
+            colour_output.append((c_index + sub_divisions-
+                .001,subcset))
+            c_index = c_index + sub_divisions
+    colour_output[-1]=(1,colour_output[-1][1])
+    return colour_output
+
 data_choropleth = dict(type='choropleth',
                        locations=df_women_business_and_law['Economy'].unique(), 
                        locationmode='country names',
                        z=df_women_business_and_law[df_women_business_and_law['Report Year']==2023]['Can a woman work in an industrial job in the same way as a man?'],
                        text=df_women_business_and_law['Economy'].unique(),
-                       colorscale=[colors[2], colors[5]],
-                       showscale=False
+                       colorscale=generateDiscreteColourScale([[colors[2]],[colors[5]]])
                       )
 
 layout_choropleth = dict(geo=dict(scope='world',  #default
@@ -122,13 +141,26 @@ layout_choropleth = dict(geo=dict(scope='world',  #default
 
 map2023 = go.Figure(data=data_choropleth, layout=layout_choropleth)
 
+map2023.update_traces(colorbar=dict(
+    thicknessmode="pixels",
+    lenmode="pixels",
+    len=100,
+    yanchor="top",
+    y=1,
+    tickvals=[0,1],
+    ticktext=["No", "Yes"],
+    tickfont=dict(
+        family='Avenir',
+        color='rgb(82, 79, 79)'
+    )
+), selector=dict(type='choropleth'))
+
 data_choropleth2 = dict(type='choropleth',
                        locations=df_women_business_and_law['Economy'].unique(), 
                        locationmode='country names',
                        z=df_women_business_and_law[df_women_business_and_law['Report Year']==2001]['Can a woman work in an industrial job in the same way as a man?'],
                        text=df_women_business_and_law['Economy'].unique(),
-                       colorscale=[colors[2], colors[5]],
-                       showscale=False
+                       colorscale=generateDiscreteColourScale([[colors[2]],[colors[5]]])
                       )
 
 layout_choropleth2 = dict(geo=dict(scope='world',  #default
@@ -143,6 +175,20 @@ layout_choropleth2 = dict(geo=dict(scope='world',  #default
                         )
 
 map2001 = go.Figure(data=data_choropleth2, layout=layout_choropleth2)
+
+map2001.update_traces(colorbar=dict(
+    thicknessmode="pixels",
+    lenmode="pixels",
+    len=100,
+    yanchor="top",
+    y=1,
+    tickvals=[0,1],
+    ticktext=["No", "Yes"],
+    tickfont=dict(
+        family='Avenir',
+        color='rgb(82, 79, 79)'
+    )
+), selector=dict(type='choropleth'))
 
 #The app itself
 
@@ -317,7 +363,7 @@ app.layout = html.Div([
     html.Hr(),
     html.P(children=[
             html.B("Authors: "),
-            html.P("Ana Beatriz Estevez, r20191209 | Filipe Dias, r20181050 | Inês Santos, r20191184 | Manuel Marreiros, r20191223"),
+            html.P("Ana Beatriz Esteves, r20191209 | Filipe Dias, r20181050 | Inês Santos, r20191184 | Manuel Marreiros, r20191223"),
             html.Br(),
             html.P("NOVA IMS 2023")
             ], style={"text-align":"center"})
@@ -331,12 +377,11 @@ app.layout = html.Div([
      Input('year_slider', 'value'),
      Input('country_drop2', 'value'),
      Input('year_drop', 'value')],
-
 )
 
 def update_graph(country, year, country2, year2):
 
-    # Wage scatter plot
+    # Labor Force scatter plot
 
     filtered_by_country = df_labor_force[df_labor_force['Country']==country]
 
@@ -359,17 +404,42 @@ def update_graph(country, year, country2, year2):
         scatter_data.append(temp_data)
 
     scatter_layout = dict(plot_bgcolor='#FFFFFF', 
-                      xaxis=dict(
-                        gridcolor='lightgrey',
-                        gridwidth=0.5,
-                        title='Year'
-                      ),
-                      yaxis=dict(
-                          gridcolor='lightgrey',
-                          gridwidth=0.5,
-                          title='Percentage'),
-                      colorway= colors_custom
-                     )
+                            xaxis=dict(
+                                gridcolor='lightgrey',
+                                gridwidth=0.5,
+                                title='<b>Year</b>',
+                                color='rgb(82, 79, 79)'
+                            ),
+                            yaxis=dict(
+                                gridcolor='lightgrey',
+                                gridwidth=0.5,
+                                title='<b>Percentage</b>',
+                                color='rgb(82, 79, 79)'),
+                            colorway= colors_custom,
+                            title={
+                                    'text': '<b>Evolution of Participation in the Labor Force by Gender</b>',
+                                    'font': {
+                                            'size': 17,
+                                            'color': 'rgb(82, 79, 79)',
+                                            'family': 'Avenir'
+                                            },
+                                    'x': 0.5,
+                                    'y': 0.9, 
+                                    'xanchor': 'center',
+                                    'yanchor': 'top', 
+                                    
+                                    },
+                            legend={'title':{'text':'<b>Gender</b>',
+                                                'font': {
+                                                    'size': 14,
+                                                },
+                                            },
+                                    'font': {
+                                                'family':"Avenir",
+                                                'size':14,
+                                                'color':"rgb(82, 79, 79)"}
+                                    }
+                        )
     
     fig1 = go.Figure(data=scatter_data, layout=scatter_layout)
 
@@ -415,27 +485,42 @@ def update_graph(country, year, country2, year2):
     ))
 
     employment_by_sector_fig.update_layout(barmode='stack', 
-                                        plot_bgcolor='#FFFFFF', 
-                                        xaxis=dict(
-                                                gridcolor='lightgrey',
-                                                gridwidth=0.5,
-                                            ),
-                                            yaxis=dict(
-                                                gridcolor='lightgrey',
-                                                gridwidth=0.5,
-                                            ),
-                                            title={
-                                                'text': 'Evolution of the Proportion of Employed Women By Sector',
-                                                'font': {
-                                                    'size': 22,
-                                                    'color': 'rgb(82, 79, 79)',
-                                                    'family': 'Avenir',
-                                                },
-                                                'x': 0.5,
-                                                'y': 0.9, 
-                                                'xanchor': 'center',
-                                                'yanchor': 'top', 
-                                            })
+                                            plot_bgcolor='#FFFFFF', 
+                                            xaxis=dict(
+                                                    gridcolor='lightgrey',
+                                                    gridwidth=0.5,
+                                                    title="<b>Year</b>",
+                                                    color='rgb(82, 79, 79)'
+                                                ),
+                                                yaxis=dict(
+                                                    gridcolor='lightgrey',
+                                                    gridwidth=0.5,
+                                                    title="<b>Percentage</b>",
+                                                    color='rgb(82, 79, 79)'
+                                                ),
+                                                title={
+                                                    'text': '<b>Evolution of the Proportion of Employed Women By Sector</b>',
+                                                    'font': {
+                                                        'size': 17,
+                                                        'color': 'rgb(82, 79, 79)',
+                                                        'family': 'Avenir',
+                                                    },
+                                                    'x': 0.5,
+                                                    'y': 0.9, 
+                                                    'xanchor': 'center',
+                                                    'yanchor': 'top', 
+                                                    },
+                                            legend={'title':{'text':'<b>Sector</b>',
+                                                                'font': {
+                                                                    'size': 15,
+                                                                },
+                                                            },
+                                                    'font': {
+                                                            'family':"Avenir",
+                                                            'size':14,
+                                                            'color':"rgb(82, 79, 79)"}
+                                                        }
+                                            )
 
     # Sunburst chart
 
@@ -570,7 +655,7 @@ def update_graph(country, year, country2, year2):
 
     employment_chart.update_layout(
         title={
-            'text': 'Employment Based on Gender and Sector',
+            'text': '<b>Employment Based on Gender and Sector in the Year '+str(year2)+' ('+str(country2)+')</b>',
             'font': {
                 'size': 22,
                 'color': 'rgb(82, 79, 79)',
