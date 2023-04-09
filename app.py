@@ -146,11 +146,23 @@ map2001 = go.Figure(data=data_choropleth2, layout=layout_choropleth2)
 
 #The app itself
 
-external_stylesheets = [dbc.themes.BOOTSTRAP, 'https://github.com/inesbsantos/Women-s-Role-in-the-Job-market-in-the-21st-Century/tree/main/assets']
-
 app = dash.Dash(
-    external_stylesheets=external_stylesheets
+    external_stylesheets=[dbc.themes.BOOTSTRAP]
 )
+
+# Add reference to custom CSS file(s)
+app.css.append_css({
+    'external_url': '/assets/typography.css'  
+})
+
+app.css.append_css({
+    'external_url': '/assets/graphs.css'  
+})
+
+app.css.append_css({
+    'external_url': '/assets/header.css'  
+})
+
 server = app.server
 
 app.layout = html.Div([
