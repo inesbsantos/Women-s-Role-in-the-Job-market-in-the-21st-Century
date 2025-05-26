@@ -7,18 +7,16 @@ import pandas as pd
 import plotly.graph_objs as go
 import plotly.express as px
 import plotly.colors as colors
+import os
 
 #----------------------------- Style -----------------------------
 
 # Color Palette
 colors = ['#F6BD60', '#F7D5A1', '#F7EDE2', '#84A59D', '#ACCEC6', '#F28482', '#F5CAC3']
 
-#Ver antes esta -> https://coolors.co/palette/f6bd60-f7ede2-f5cac3-84a59d-f28482
-
-
 #----------------------------- Data -----------------------------
 
-path = r'https://raw.githubusercontent.com/inesbsantos/Women-s-Role-in-the-21st-Century/main/datasets/'
+path = os.path.dirname(os.path.abspath(__file__)).replace('\\', '/') + '/datasets/'
 
 # Women Business and Law datasets
 
@@ -150,7 +148,7 @@ map2023.update_traces(colorbar=dict(
     tickvals=[0,1],
     ticktext=["No", "Yes"],
     tickfont=dict(
-        family='Avenir',
+        family='Segoe UI',
         color='rgb(82, 79, 79)'
     )
 ), selector=dict(type='choropleth'))
@@ -185,7 +183,7 @@ map2001.update_traces(colorbar=dict(
     tickvals=[0,1],
     ticktext=["No", "Yes"],
     tickfont=dict(
-        family='Avenir',
+        family='Segoe UI',
         color='rgb(82, 79, 79)'
     )
 ), selector=dict(type='choropleth'))
@@ -421,7 +419,7 @@ def update_graph(country, year, country2, year2):
                                     'font': {
                                             'size': 17,
                                             'color': 'rgb(82, 79, 79)',
-                                            'family': 'Avenir'
+                                            'family': 'Segoe UI'
                                             },
                                     'x': 0.5,
                                     'y': 0.9, 
@@ -435,7 +433,7 @@ def update_graph(country, year, country2, year2):
                                                 },
                                             },
                                     'font': {
-                                                'family':"Avenir",
+                                                'family':"Segoe UI",
                                                 'size':14,
                                                 'color':"rgb(82, 79, 79)"}
                                     }
@@ -503,7 +501,7 @@ def update_graph(country, year, country2, year2):
                                                     'font': {
                                                         'size': 17,
                                                         'color': 'rgb(82, 79, 79)',
-                                                        'family': 'Avenir',
+                                                        'family': 'Segoe UI',
                                                     },
                                                     'x': 0.5,
                                                     'y': 0.9, 
@@ -516,7 +514,7 @@ def update_graph(country, year, country2, year2):
                                                                 },
                                                             },
                                                     'font': {
-                                                            'family':"Avenir",
+                                                            'family':"Segoe UI",
                                                             'size':14,
                                                             'color':"rgb(82, 79, 79)"}
                                                         }
@@ -659,7 +657,7 @@ def update_graph(country, year, country2, year2):
             'font': {
                 'size': 22,
                 'color': 'rgb(82, 79, 79)',
-                'family': 'Avenir',
+                'family': 'Segoe UI',
             },
             'x': 0.5,
             'xanchor': 'center',
@@ -672,4 +670,4 @@ def update_graph(country, year, country2, year2):
     return [fig1, employment_by_sector_fig, employment_chart]
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run(debug=True)
